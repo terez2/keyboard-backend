@@ -9,4 +9,16 @@ export class AppController {
   getHello(): string {
     return this.appService.getHello();
   }
+
+  @Get('next')
+  next(): string {
+    this.appService.sendMessage('next');
+    return 'next';
+  }
+
+  @Get('confirm')
+  confirm(): string {
+    this.appService.sendMessage('confirm');
+    return 'confirm';
+  }
 }
